@@ -5,7 +5,7 @@ export async function middleware(request) {
     const session = await getToken({ req: request })
     if(request.nextUrl.pathname.startsWith('/write')){
         if(session == null){
-            return NextResponse.redirect('http://localhost:3000/api/auth/signin')
+            return NextResponse.redirect('/api/auth/signin')
         }
     }
 } 
